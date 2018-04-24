@@ -5,20 +5,21 @@
 #include <string.h>
 
 int replace(int argc, char **argv){
-  if(argc % 2){
+  if(!(argc % 2)){
     return 0;
   }
+
   std::ofstream output;
   std::ifstream input;
   input.open(argv[1]);
 
-  std::string outName = "CB3mod.net";
+  std::string outName(argv[2]);
 
   output.open(outName);
 
   std::string buffer;
 
-  int i = 2;
+  int i = 3;
 
   while(std::getline(input, buffer)){
     std::string line;
